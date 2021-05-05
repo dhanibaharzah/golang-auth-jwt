@@ -29,7 +29,7 @@ This is my folder structure under my `$GOPATH` or `$HOME/your_username/go`.
 |   |   |   |   +-- utils
 |   |   |   |   |   |-- utils.go
 ```
-Ensure you create the `gamorvi` directory in your `github.com` directory. `cd` into the `gamorvi` directory before `git clone https://github.com/gamorvi/restful-api-with-golang.git`
+Ensure you create the `quantum` directory in your `github.com` directory. `cd` into the `quantum` directory before `git clone https://github.com/dhanibaharzah/golang-auth-jwt.git`
 
 ## Download the packages used to create this rest API
 Run the following Golang commands to install all the necessary packages. These packages will help you set up a web server, ORM for interacting with your db, mysql driver for db connection, load your environment variables from the .env file and generate JWT tokens.
@@ -80,7 +80,7 @@ Use the following DDL (Data Definition Language) to create the users table.
 CREATE TABLE `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
-  `username` varchar(255) DEFAULT NULL,
+  `username` varchar(255) UNIQUE NULL,
   `password` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
@@ -107,9 +107,9 @@ To be able to login, you need to use the create new user endpoint to set up a us
 
 ```
 {
-	"Name": "Joe Bloke",
-	"Username": "joe.bloke@fake-domain.com",
-    "Password": "secret"
+	"Name": "admin",
+	"Username": "root@admin.com",
+    "Password": "123123"
 }
 ```
 
@@ -126,8 +126,8 @@ Note that the current implementation still returns the encrypted password, this 
         "CreatedAt": "2019-05-06T00:54:22.09382+01:00",
         "UpdatedAt": "2019-05-06T00:54:22.09382+01:00",
         "DeletedAt": null,
-        "Name": "Joe Bloke",
-        "Username": "joe.bloke@fake-domain.com"
+        "Name": "admin",
+        "Username": "root@admin.com"
     }
 }
 ```
@@ -139,7 +139,7 @@ Note that the current implementation still returns the encrypted password, this 
 *** Input ***
 ```
 {
-  "Username": "root@root.com"
+  "Username": "root@admin.com"
   "Password": "123123"
 }
 ```
