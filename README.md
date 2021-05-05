@@ -10,7 +10,7 @@ This is my folder structure under my `$GOPATH` or `$HOME/your_username/go`.
 +-- src
 |   +-- github.com
 |   |   +-- quantum
-|   |   |   +-- restapi2
+|   |   |   +-- golang-auth-jwt
 |   |   |   |   |-- .env
 |   |   |   |   |-- main.go
 |   |   |   |   |-- server.go
